@@ -1,0 +1,19 @@
+{
+  "name": "ma-swipe-left",
+  "version": "1.0.0",
+  "description": "Add a specific component for https://materializecss.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amn31/ma-swipe-left.git"
+  },
+  "author": "Morillon Alain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amn31/ma-swipe-left/issues"
+  },
+  "homepage": "https://github.com/amn31/ma-swipe-left#readme"
+}

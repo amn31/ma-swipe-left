@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<title>Example for ma-swipe-left</title>
+
+<!-- CSS  -->
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+	
+<link rel="stylesheet" href="css/swipe-left.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="js/jquery.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/swipe-left.js"></script>
+
+<style>
+.cell-120px {
+	width: 120px; /* See rightWidth: 240/2 in $().collection_swipe() */
+	height: 100%;
+	font-size: xx-small;
+	float: left;
+}
+
+.h50 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+	width: 120px; /* See rightWidth: 240/2 in $().collection_swipe() */
+	height: 50%;
+	overflow: hidden;
+	background-color: #e0e0e0;
+}
+
+.collection-gpx-container {
+	border: 1px solid #e0e0e0;
+	background: aliceblue;
+	height: 242px; /* WARNING: See rightWidth: 240 in $().collection_swipe() */
+	margin: 5px;
+}
+</style>
+</head>
+<body style="overflow: hidden" onload="initialize();">
+
+
+	<div>
+		<h3>Quick start</h3>
+		<div style="padding-left: 30px">
+			In the HTML page add:
+			<ul>
+			<li>&lt;script src="js/swipe-left.js"&gt;&lt;/script&gt;</li>
+			<li>&lt;link rel="stylesheet" href="css/swipe-left.css"&gt;</li>
+			</ul>
+			<pre>
+			// Execute following code for initialisation    
+			$('.collection-swipe').collection_swipe({
+			         rightWidth : 240, // width on the right side 
+			                           // where component is opened
+			         //  Option: callbacks
+			         onOpen : function(elem, state) {
+				         console.log('onOpen elem', elem);
+			         },
+			         onClose : function(elem, state) {
+				         console.log('onClose elem', elem);
+			         },
+			         onChange : function(elem, state) {
+				         console.log('CHANGE elem', elem);
+				         console.log('CHANGE state', state);
+			         }
+			    });
+			</pre>
+			
+		</div>
+	</div>
+
+	<div>
+		<ul class="collection">
+			<li class="collection-swipe">
+				<div class="collection-gpx-container">
+					<div class="collection-swipe-left">
+						<div class="row">
+							<div class="col s11">
+								<blockquote class="THEME_BORDER previousgpx_blockquote">
+									<div class="row">
+										<div class="col s12">
+											<div class="previousgpx_title">
+												<a	href="#"
+													class=" THEME_TEXT "> <i
+													class="material-icons THEME_TEXT">mode_edit</i>
+													<span >class <b>"collection-swipe-left"</b> define left area </span>
+												</a>
+											</div>
+											<b class="font-small grey-text text-darken-2 previousgpx_trackname">collection-swipe-icon</b>
+											<p>
+												<br/>class <b>"collection-swipe-icon"</b> define icon which can close or open the swipe.
+												<br/>class <b>"collection-swipe-right"</b> define right area.
+												<br/>class <b>"collection-swipe-close"</b> define the closing of swipe if user click on it class. 
+											</p>
+											<p> Now try to swipe that component to the left or click on <i class="material-icons">chevron_left</i> in the right corner.
+										</div>
+										
+									</div>
+								</blockquote>
+							</div>
+							<div class="col s1">
+								<i class="collection-swipe-icon material-icons">chevron_left</i>
+							</div>
+						</div>
+					</div>
+					<div
+						class="collection-gpx-right collection-swipe-right center NOTHEME">
+						<div class="cell-120px">
+							<div class="h50 collection-swipe-close">
+								<a href="#" onClick="info(this)"> <i	class="material-icons">edit</i><br /> Edit </a>
+							</div>
+							<div class="h50 collection-swipe-close">
+								<a href="#" onClick="info(this)" class=" THEME_TEXT "><i
+									class="material-icons">share</i><br /> <span class="lang">Share</span></a>
+							</div>
+						</div>
+						<div class="cell-120px">
+
+							<div class="h50" id="menu-track-color-view-1-{INDEXTRACK}">
+								<a href="#" onClick="info(this)" class=" THEME_TEXT "><i
+									class="material-icons">color_lens</i><br /> <span class="lang">Color</span></a>
+
+							</div>
+							<div class="h50 collection-swipe-close pink lighten-5">
+								<a href="#" onClick="info(this)"
+									class="pink-text text-darken-2"><i class="material-icons ">delete</i><br />
+									<span class="lang">Remove</span></a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+
+	<script>
+	
+		function info(elem) {
+			alert($(elem).html());
+		}
+		function initialize() {
+	      $('.collection-swipe').collection_swipe({
+	         rightWidth : 240, // width on the right side 
+	                           // where component is opened
+	         //  Option: callbacks
+	         onOpen : function(elem, state) {
+		         console.log('onOpen elem', elem);
+	         },
+	         onClose : function(elem, state) {
+		         console.log('onClose elem', elem);
+	         },
+	         onChange : function(elem, state) {
+		         console.log('CHANGE elem', elem);
+		         console.log('CHANGE state', state);
+	         }
+	      });
+      }
+
+      // ================ PHONE ==================
+      document.addEventListener("deviceready", function() {
+	      initialize();
+      });
+	</script>
+</body>
+</html>
+
