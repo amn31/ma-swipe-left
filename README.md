@@ -47,3 +47,16 @@ Add a specific component for https://materializecss.com
 		}
 	});
 ~~~
+
+## Run project
+
+	Launch commands:
+	
+### Installation des modules
+	npm install
+
+### Build complete /dist
+	gulp build
+
+# Start browser 
+	gulp
