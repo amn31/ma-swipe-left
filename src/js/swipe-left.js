@@ -246,31 +246,36 @@ function SwipeLeft(cfg) {
 
 }
 
-$.fn.collection_swipe = function (options) {
+(function ($) {
+	$.fn.collection_swipe = function (options) {
 
-	// Bob's default settings:
-	var defaults = {
-		isOpened: false,
-		bordersRight: 0,
-		//rightPercentSize: 50,
-		rightWidth: 180,
-		classOnSwipe: 'collection-swipe-onclick',
-		onOpen: function (el) {}, // A function to be called when sideNav is opened
-		onClose: function (el) {}, // A function to be called when sideNav is closed
-		onChange: function () {}
+		// Bob's default settings:
+		var defaults = {
+			isOpened: false,
+			bordersRight: 0,
+			//rightPercentSize: 50,
+			rightWidth: 180,
+			classOnSwipe: 'collection-swipe-onclick',
+			onOpen: function (el) {}, // A function to be called when sideNav is opened
+			onClose: function (el) {}, // A function to be called when sideNav is closed
+			onChange: function () {}
+		};
+
+		var settings = $.extend({}, defaults, options);
+
+		return this.each(function (index, element) {
+			// Plugin code would go here...
+			if (element.className.match(/collection-swipe/)) {
+
+				element.collection = new SwipeLeft({
+					element: element,
+					settings: settings
+				}).start();
+			}
+		});
+
 	};
 
-	var settings = $.extend({}, defaults, options);
+}(jQuery));
 
-	return this.each(function (index, element) {
-		// Plugin code would go here...
-		if (element.className.match(/collection-swipe/)) {
-
-			element.collection = new SwipeLeft({
-				element: element,
-				settings: settings
-			}).start();
-		}
-	});
-
-};
+(function (s) {console.log("Initialize "+s)}('SwipeLeft'));
