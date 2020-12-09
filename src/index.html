@@ -22,7 +22,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="js/swipe-left.min.js"></script>
+<script src="js/swipe-left.js"></script>
 
 <style>
 .cell-120px {
@@ -54,34 +54,6 @@
 <body style="overflow: hidden" onload="initialize();">
 
 
-	<div>
-		<h3>Quick start</h3>
-		<div style="padding-left: 30px">
-			In the HTML page add:
-			<ul>
-			<li>&lt;script src="js/swipe-left.js"&gt;&lt;/script&gt;</li>
-			<li>&lt;link rel="stylesheet" href="css/swipe-left.css"&gt;</li>
-			</ul>
-			<pre>
-			// Execute following code for initialisation    
-			$('.collection-swipe').collection_swipe({
-			         rightWidth : 240, // width on the right side 
-			                           // where component is opened
-			         //  Option: callbacks
-			         onOpen : function(elem, state) {
-				         console.log('onOpen elem', elem);
-			         },
-			         onClose : function(elem, state) {
-				         console.log('onClose elem', elem);
-			         },
-			         onChange : function(elem, state) {
-				         console.log('CHANGE elem', elem);
-				         console.log('CHANGE state', state);
-			         }
-			    });
-			</pre>
-		</div>
-	</div>
 
 	<div>
 		<ul class="collection">
@@ -171,6 +143,35 @@
 			</li>
 		</ul>
 	</div>
+		<div>
+		<h3>Quick start</h3>
+		<div style="padding-left: 30px">
+			In the HTML page add:
+			<ul>
+			<li>&lt;script src="js/swipe-left.js"&gt;&lt;/script&gt;</li>
+			<li>&lt;link rel="stylesheet" href="css/swipe-left.css"&gt;</li>
+			</ul>
+			<pre>
+			// Execute following code for initialisation    
+			$('.collection-swipe').collection_swipe({
+			         rightWidth : 240, // width on the right side 
+			                           // where component is opened
+			         //  Option: callbacks
+			         onOpen : function(elem, state) {
+				         console.log('onOpen elem', elem);
+			         },
+			         onClose : function(elem, state) {
+				         console.log('onClose elem', elem);
+			         },
+			         onChange : function(elem, state) {
+				         console.log('CHANGE elem', elem);
+				         console.log('CHANGE state', state);
+			         }
+			    });
+			</pre>
+		</div>
+	</div>
+	
 
 
 	<script>
